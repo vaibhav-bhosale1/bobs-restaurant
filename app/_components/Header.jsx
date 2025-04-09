@@ -1,13 +1,24 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Calendar, Phone, ChevronDown, Home, Utensils, Info, MessageSquare } from 'lucide-react';
-import { useAuth, UserButton } from '@clerk/nextjs';
+import { Menu, X, Calendar, Phone, ChevronDown, Home, Utensils, Info, MessageSquare ,LogOut, UserCircle, CreditCard, Users, Settings} from 'lucide-react';
+import { useAuth, UserButton, SignOutButton} from '@clerk/nextjs';
 import Link from 'next/link';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { isSignedIn } = useAuth();
+    const router=useRouter()
+    
 
     // Handle scroll effect
     useEffect(() => {
@@ -57,9 +68,45 @@ const Header = () => {
             <div className="hidden md:flex items-center space-x-3">
               {isSignedIn ? (
                 <div className="flex items-center space-x-3 bg-white/10 rounded-full py-1.5 px-4 backdrop-blur-md border border-white/10">
-                  <UserButton />
-                  <span className="text-white text-sm font-medium">My Account</span>
-                </div>
+                <UserButton afterSignOutUrl="/" />
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className="text-white font-semibold hover:text-amber-400 transition-colors">
+                      My Account
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="bg-black border border-white/10 text-white min-w-[180px] shadow-lg rounded-lg p-1">
+                    <DropdownMenuItem
+                      onClick={() => router.push("/myreservations")}
+                      className="hover:bg-amber-500/10 cursor-pointer flex items-center gap-2 px-3 py-2 rounded-md"
+                    >
+                      <UserCircle size={16} />
+                      My Reservations
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-amber-500/10 cursor-pointer flex items-center gap-2 px-3 py-2 rounded-md">
+                      <CreditCard size={16} />
+                      Billing
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-amber-500/10 cursor-pointer flex items-center gap-2 px-3 py-2 rounded-md">
+                      <Users size={16} />
+                      Team
+                    </DropdownMenuItem>
+                    <DropdownMenuItem className="hover:bg-amber-500/10 cursor-pointer flex items-center gap-2 px-3 py-2 rounded-md">
+                      <Settings size={16} />
+                      Subscription
+                    </DropdownMenuItem>
+          
+                    <DropdownMenuSeparator className="bg-white/10 my-1" />
+          
+                    <SignOutButton>
+                      <DropdownMenuItem className="hover:bg-red-500/10 cursor-pointer flex items-center gap-2 px-3 py-2 rounded-md text-red-400">
+                        <LogOut size={16} />
+                        Logout
+                      </DropdownMenuItem>
+                    </SignOutButton>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
               ) : (
                 <Link href="/sign-in">
                   <button className="group relative flex items-center justify-center px-5 py-2 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-full hover:shadow-amber-500/20 hover:shadow-lg transition-all duration-300 overflow-hidden">
