@@ -1,12 +1,13 @@
 
 import { UserButton } from '@clerk/nextjs'
 import React from 'react'
+import Header from './_components/Header'
 
 const page = () => {
   return (
     <div>
-       hello
-       <UserButton><h1>ko</h1></UserButton>
+     <Header/>
+     
     </div>
   )
 }

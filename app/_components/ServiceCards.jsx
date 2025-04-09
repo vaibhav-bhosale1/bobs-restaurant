@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { Calendar, Home, Utensils, Umbrella, Cloud } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import resevation from '../../public/reservation.jpg'
 
 export default function ServiceCards() {
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -12,7 +14,7 @@ export default function ServiceCards() {
       title: "Restaurant Booking",
       description: "Reserve your table with just a few clicks. Special occasions or casual dining, we've got you covered.",
       icon: <Calendar size={24} />,
-      image: "/api/placeholder/800/500",
+      image:resevation,
       path:"/booking",
       color: "bg-amber-600"
     },
@@ -21,7 +23,7 @@ export default function ServiceCards() {
       title: "Our Interior",
       description: "Experience our warm, inviting atmosphere with modern design and comfortable seating arrangements.",
       icon: <Home size={24} />,
-      image: "/api/placeholder/800/500",
+      image: "/interior.jpg",
       path:"/interior",
       color: "bg-red-600"
     },
@@ -30,7 +32,7 @@ export default function ServiceCards() {
       title: "Menu Selection",
       description: "Browse our diverse menu featuring chef's specials, seasonal items, and signature cocktails.",
       icon: <Utensils size={24} />,
-      image: "/api/placeholder/800/500",
+      image: "/menu1.jpg",
       path:"/menu",
       color: "bg-emerald-600"
     },
@@ -39,7 +41,7 @@ export default function ServiceCards() {
       title: "Outdoor Service",
       description: "Enjoy al fresco dining in our beautifully arranged patio area with stunning views.",
       icon: <Umbrella size={24} />,
-      image: "/api/placeholder/800/500",
+      image: "/exterior.jpg",
       path:"/outdoor-services",
       color: "bg-blue-600"
     }
@@ -64,12 +66,14 @@ export default function ServiceCards() {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <div className="h-48 bg-gray-200 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                <Image
+                 src={service.image}
+                 alt={service.title}
+                 height={300}
+                 width={300}
+                 className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-opacity-40 group-hover:bg-opacity-30 transition-all duration-300"></div>
               </div>
               
               <div 

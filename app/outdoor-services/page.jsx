@@ -35,17 +35,17 @@ export default function OutdoorService() {
     {
       title: "Garden Patio",
       description: "Surrounded by lush plants and herbs from our garden, our main patio offers a serene dining experience.",
-      image: "/api/placeholder/800/500",
+      image: "/outdoor/outdoor5.jpg",
     },
     {
       title: "Rooftop Terrace",
       description: "Enjoy stunning city views from our exclusive rooftop terrace, perfect for sunset cocktails.",
-      image: "/api/placeholder/800/500",
+      image: "/outdoor/outdoor2.jpg",
     },
     {
       title: "Private Cabanas",
       description: "For more intimate gatherings, our private cabanas offer a secluded outdoor dining option.",
-      image: "/api/placeholder/800/500",
+      image: "/outdoor/outdoor1.jpg",
     }
   ];
 

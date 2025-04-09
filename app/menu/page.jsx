@@ -9,8 +9,7 @@ export default function RestaurantMenu() {
   const categories = [
     'Starters', 
     'Main Course', 
-    'Seafood', 
-    'Vegetarian', 
+    
     'Desserts', 
     'Drinks'
   ];
@@ -19,28 +18,28 @@ export default function RestaurantMenu() {
     'Starters': [
       {
         id: 's1',
-        name: 'Truffle Arancini',
+        name: 'Anchovy',
         description: 'Crispy risotto balls filled with wild mushrooms and truffle oil',
         price: '$12',
-        image: '/api/placeholder/500/300',
+        image: '/menu/breakfast/ancovy.jpg',
         tags: ['popular', 'vegetarian'],
         preparationTime: '10 min'
       },
       {
         id: 's2',
-        name: 'Tuna Tartare',
+        name: 'Bottarga',
         description: 'Fresh tuna with avocado, sesame oil, and won ton crisps',
         price: '$16',
-        image: '/api/placeholder/500/300',
+        image: '/menu/breakfast/batarga.jpg',
         tags: ['spicy'],
         preparationTime: '15 min'
       },
       {
         id: 's3',
-        name: 'Bruschetta Trio',
+        name: 'Camargue',
         description: 'Tomato & basil, mushroom & truffle, and fig & prosciutto on artisan bread',
         price: '$14',
-        image: '/api/placeholder/500/300',
+        image: '/menu/breakfast/camargue.jpg',
         tags: [],
         preparationTime: '12 min'
       }
@@ -48,88 +47,39 @@ export default function RestaurantMenu() {
     'Main Course': [
       {
         id: 'm1',
-        name: 'Beef Wellington',
+        name: 'GrillednBulls Rib',
         description: 'Tenderloin wrapped in mushroom duxelles and puff pastry',
         price: '$38',
-        image: '/api/placeholder/500/300',
+        image: '/menu/maincourse/bullrib.jpeg',
         tags: ['popular', 'chef-special'],
         preparationTime: '30 min'
       },
       {
         id: 'm2',
-        name: 'Slow Roasted Lamb',
+        name: 'Grilled Duck Breast',
         description: 'Herb crusted lamb with rosemary jus and root vegetables',
         price: '$32',
-        image: '/api/placeholder/500/300',
+        image: '/menu/maincourse/duckbreast.jpeg',
         tags: [],
         preparationTime: '25 min'
       },
       {
         id: 'm3',
-        name: 'Duck Confit',
+        name: 'Roast Lamb Loin',
         description: 'Crispy duck leg with orange glaze and wild rice pilaf',
         price: '$29',
-        image: '/api/placeholder/500/300',
+        image: '/menu/maincourse/lambloin.jpeg',
         tags: ['popular'],
         preparationTime: '28 min'
-      }
-    ],
-    'Seafood': [
-      {
-        id: 'sf1',
-        name: 'Grilled Octopus',
-        description: 'Tender octopus with chorizo, fingerling potatoes, and paprika oil',
-        price: '$24',
-        image: '/api/placeholder/500/300',
-        tags: ['chef-special'],
-        preparationTime: '20 min'
       },
       {
-        id: 'sf2',
-        name: 'Pan Seared Scallops',
-        description: 'Jumbo scallops with pea puree and crispy pancetta',
-        price: '$28',
-        image: '/api/placeholder/500/300',
+        id: 'm4',
+        name: 'Duck confeti',
+        description: 'Crispy duck leg with orange glaze and wild rice pilaf',
+        price: '$29',
+        image: '/menu/maincourse/ducktconfeti.jpg',
         tags: ['popular'],
-        preparationTime: '18 min'
-      },
-      {
-        id: 'sf3',
-        name: 'Lobster Linguine',
-        description: 'Fresh Maine lobster with cherry tomatoes and white wine sauce',
-        price: '$36',
-        image: '/api/placeholder/500/300',
-        tags: [],
-        preparationTime: '25 min'
-      }
-    ],
-    'Vegetarian': [
-      {
-        id: 'v1',
-        name: 'Wild Mushroom Risotto',
-        description: 'Creamy arborio rice with assorted wild mushrooms and parmesan',
-        price: '$22',
-        image: '/api/placeholder/500/300',
-        tags: ['vegetarian'],
-        preparationTime: '20 min'
-      },
-      {
-        id: 'v2',
-        name: 'Eggplant Parmesan',
-        description: 'Layered eggplant with San Marzano tomato sauce and buffalo mozzarella',
-        price: '$19',
-        image: '/api/placeholder/500/300',
-        tags: ['vegetarian'],
-        preparationTime: '22 min'
-      },
-      {
-        id: 'v3',
-        name: 'Stuffed Bell Peppers',
-        description: 'Roasted peppers with quinoa, black beans, and avocado crema',
-        price: '$18',
-        image: '/api/placeholder/500/300',
-        tags: ['vegetarian', 'vegan'],
-        preparationTime: '18 min'
+        preparationTime: '28 min'
       }
     ],
     'Desserts': [
@@ -138,7 +88,7 @@ export default function RestaurantMenu() {
         name: 'Crème Brûlée',
         description: 'Classic vanilla custard with caramelized sugar crust',
         price: '$10',
-        image: '/api/placeholder/500/300',
+        image: '/menu/desert/creme-brulee-.webp',
         tags: ['popular'],
         preparationTime: '15 min'
       },
@@ -147,7 +97,7 @@ export default function RestaurantMenu() {
         name: 'Chocolate Soufflé',
         description: 'Warm chocolate soufflé with vanilla bean ice cream',
         price: '$12',
-        image: '/api/placeholder/500/300',
+        image: '/menu/desert/chocolate.jpeg',
         tags: ['chef-special'],
         preparationTime: '20 min'
       },
@@ -156,7 +106,7 @@ export default function RestaurantMenu() {
         name: 'Berry Panna Cotta',
         description: 'Silky vanilla panna cotta with mixed berry compote',
         price: '$9',
-        image: '/api/placeholder/500/300',
+        image: '/menu/desert/berry.jpeg',
         tags: [],
         preparationTime: '12 min'
       }
@@ -167,7 +117,7 @@ export default function RestaurantMenu() {
         name: 'Signature Old Fashioned',
         description: 'Bourbon, house-made bitters, orange peel, and smoked sugar',
         price: '$14',
-        image: '/api/placeholder/500/300',
+        image: '/menu/wine/wine1.jpeg',
         tags: ['popular', 'alcoholic'],
         preparationTime: '5 min'
       },
@@ -176,7 +126,7 @@ export default function RestaurantMenu() {
         name: 'Botanical Spritz',
         description: 'Gin, elderflower liqueur, prosecco, and fresh herbs',
         price: '$12',
-        image: '/api/placeholder/500/300',
+        image: '/menu/wine/wine2.jpeg',
         tags: ['alcoholic'],
         preparationTime: '7 min'
       },
@@ -185,7 +135,7 @@ export default function RestaurantMenu() {
         name: 'Berry Kombucha Mocktail',
         description: 'House-fermented kombucha with mixed berries and mint',
         price: '$8',
-        image: '/api/placeholder/500/300',
+        image: '/menu/wine/wine3.jpeg',
         tags: ['non-alcoholic'],
         preparationTime: '5 min'
       }
