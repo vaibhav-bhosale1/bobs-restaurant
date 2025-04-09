@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { ChevronDown, Heart, Clock, Fire } from 'lucide-react';
+import { ChevronDown, Heart, Clock, Fire, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 export default function RestaurantMenu() {
   const [activeCategory, setActiveCategory] = useState('Starters');
@@ -188,10 +190,18 @@ export default function RestaurantMenu() {
       default: return 'bg-gray-500';
     }
   };
+  const router=useRouter();
+  
 
   return (
     <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
+      <Button className=" hidden md:flex text-white relative "
+    onClick={()=>router.replace('/dashboard')}
+    >
+      <ArrowLeft />
+      Go Back
+    </Button>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-3">Our Menu</h2>
           <div className="w-24 h-1 bg-red-600 mx-auto mb-6"></div>

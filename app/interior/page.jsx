@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Users, MapPin, Coffee, Music, ThumbsUp, ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 
 export default function RestaurantInterior() {
   const [activeImage, setActiveImage] = useState(0);
@@ -40,9 +42,16 @@ Our newly added outdoor terrace offers breathtaking city views and provides the 
   const nextImage = () => setActiveImage((prev) => (prev === interiorImages.length - 1 ? 0 : prev + 1));
   const prevImage = () => setActiveImage((prev) => (prev === 0 ? interiorImages.length - 1 : prev - 1));
   const toggleExpandedView = () => setExpandedView(!expandedView);
-
+ const router=useRouter()
   return (
     <section className="py-16 bg-gradient-to-b from-slate-50 to-white">
+       
+       <Button className=" hidden md:flex text-white relative left-33 "
+          onClick={()=>router.replace('/dashboard')}
+          >
+            <ArrowLeft />
+            Go Back
+          </Button>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-extrabold text-gray-900 tracking-tight">Explore Our Space</h2>

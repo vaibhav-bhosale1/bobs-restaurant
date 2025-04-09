@@ -1,12 +1,14 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { Sun, Moon, CloudRain, Wind, Umbrella, Leaf, Cloud } from 'lucide-react';
+import { Sun, Moon, CloudRain, Wind, Umbrella, Leaf, Cloud, ArrowLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 export default function OutdoorService() {
   const [timeOfDay, setTimeOfDay] = useState('day');
   const [weatherIcon, setWeatherIcon] = useState(<Sun size={24} />);
   const [currentWeather, setCurrentWeather] = useState('sunny');
-
+  const router=useRouter();
   // Simulate weather changes
   useEffect(() => {
     const weatherTypes = ['sunny', 'cloudy', 'rainy', 'windy'];
@@ -77,10 +79,18 @@ export default function OutdoorService() {
   ];
 
   return (
+    <div>
+   
     <section className={`py-16 transition-colors duration-1000 ${
       timeOfDay === 'day' ? 'bg-blue-50' : 'bg-gray-900 text-white'
     }`}>
       <div className="container mx-auto px-4">
+      <Button className=" hidden md:flex text-white relative   "
+    onClick={()=>router.replace('/dashboard')}
+    >
+      <ArrowLeft />
+      Go Back
+    </Button>
         <div className="text-center mb-12">
           <div className="flex justify-center items-center space-x-3 mb-3">
             <h2 className="text-4xl font-bold">Outdoor Service</h2>
@@ -209,7 +219,7 @@ export default function OutdoorService() {
           }`}>
             <span className="flex items-center justify-center">
               <Umbrella size={20} className="mr-2" />
-              <span className="font-medium">Reserve Outdoor Seating</span>
+              <span className="font-medium" onClick={()=>router.replace('/booking')}>Reserve Outdoor Seating</span>
             </span>
           </button>
         </div>
@@ -225,5 +235,6 @@ export default function OutdoorService() {
         }
       `}</style>
     </section>
+    </div>
   );
 }

@@ -4,10 +4,11 @@ import { Calendar, Home, Utensils, Umbrella, Cloud } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import resevation from '../../public/reservation.jpg'
+import { useRouter } from 'next/navigation';
 
 export default function ServiceCards() {
   const [hoveredCard, setHoveredCard] = useState(null);
-  
+  const router=useRouter()
   const services = [
     {
       id: 1,
@@ -57,13 +58,13 @@ export default function ServiceCards() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map(service => (
-            <Link href={`${service.path}`}
-            key={service.id}>
+        
             <div 
               key={service.id}
               className="relative rounded-lg overflow-hidden shadow-lg transition-all duration-300 transform hover:-translate-y-2 group"
               onMouseEnter={() => setHoveredCard(service.id)}
               onMouseLeave={() => setHoveredCard(null)}
+              onClick={()=>router.replace(`${service.path}`)}
             >
               <div className="h-48 bg-gray-200 overflow-hidden">
                 <Image
@@ -94,7 +95,7 @@ export default function ServiceCards() {
                 <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-red-600"></div>
               )}
             </div>
-            </Link>
+        
           ))}
         </div>
       </div>
