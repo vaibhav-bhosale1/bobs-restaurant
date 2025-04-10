@@ -49,11 +49,11 @@ export default function ServiceCards() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-19 px-10 bg-blue-950">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-2">Our Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Discover what makes Bob's Restaurant special. From our exceptional dining experience to our carefully crafted atmosphere.</p>
+          <h2 className="text-3xl font-bold mb-2 text-white">Our Services</h2>
+          <p className="text-gray-300 max-w-2xl mx-auto">Discover what makes Bob's Restaurant special. From our exceptional dining experience to our carefully crafted atmosphere.</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

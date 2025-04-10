@@ -29,17 +29,17 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`w-full fixed top-0 z-50 transition-all duration-300 ${
+    <header className={`w-full fixed top-0 z-50 transition-all duration-300 backdrop-blur-lg ${
       scrolled ? "bg-black/60 backdrop-blur-xl shadow-md" : "bg-transparent"
     }`}>
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between ">
         {/* Logo */}
-        <div className="text-black font-bold text-2xl tracking-wide">
+        <div className="text-white font-bold text-2xl tracking-wide">
           <span className="text-amber-500">Bob's</span> Restaurant
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex space-x-6 items-center text-white text-sm font-medium">
+        <nav className="hidden md:flex space-x-6 items-center text-white text-sm font-medium ">
           <NavLink href="#" label="Home" icon={<Home size={16} />} />
           <NavLink href="#" label="Menu" icon={<Utensils size={16} />} />
           <NavLink href="#" label="About" icon={<Info size={16} />} />
@@ -53,7 +53,7 @@ const Header = () => {
               <UserButton afterSignOutUrl="/" />
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="text-black font-medium hover:text-amber-400 transition">
+                  <button className="text-white font-medium hover:text-amber-400 transition">
                     My Account <ChevronDown size={16} className="inline ml-1" />
                   </button>
                 </DropdownMenuTrigger>
@@ -89,7 +89,7 @@ const Header = () => {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden p-2 rounded-full bg-white/10 text-black border border-white/20"
+          className="md:hidden p-2 rounded-full bg-white/10 text-white border border-white/20"
         >
           {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -98,7 +98,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-white/10 animate-slideDown">
-          <div className="px-4 py-6 space-y-3 text-black">
+          <div className="px-4 py-6 space-y-3 text-white">
             <MobileNavLink label="Home" icon={<Home size={18} />} />
             <MobileNavLink label="Menu" icon={<Utensils size={18} />} />
             <MobileNavLink label="About" icon={<Info size={18} />} />

@@ -5,7 +5,7 @@ import ServiceCards from "@/app/_components/ServiceCards"
 
 const Dashboard = () => {
   return (
-    <div>
+    <div >
         <Header/>
         <ServiceCards/>
     </div>

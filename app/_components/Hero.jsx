@@ -1,6 +1,9 @@
+"use client"
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 const Hero = () => {
+  const router=useRouter();
   return (
     <div>
 <section className="relative h-screen">
@@ -12,7 +15,7 @@ const Hero = () => {
     <div className="container mx-auto px-4 h-full flex flex-col justify-center items-center text-center">
       
       {/* Content Box */}
-      <div className="bg-amber-200 bg-opacity-60 p-8 rounded-xl shadow-xl max-w-3xl">
+      <div className="backdrop-blur-lg bg-opacity-60 p-8 rounded-xl shadow-xl max-w-3xl">
         <h1 className="text-5xl md:text-6xl font-bold text-black mb-4 drop-shadow-lg">
           Welcome to Restaurant Bob
         </h1>
@@ -20,10 +23,15 @@ const Hero = () => {
           Discover an authentic French gastronomic experience in the heart of Paris
         </p>
         <div className="flex flex-col md:flex-row gap-4 justify-center">
-          <button className="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-md font-medium text-lg transition">
+          <button className="bg-amber-700 hover:bg-amber-800 text-white px-6 py-3 rounded-md font-medium text-lg transition
+        
+          "
+          onClick={()=>router.replace('/booking')}>
             Book a table
           </button>
-          <button className="bg-white hover:bg-gray-100 text-amber-700 px-6 py-3 rounded-md font-medium text-lg transition">
+          <button className="bg-white hover:bg-gray-100 text-amber-700 px-6 py-3 rounded-md font-medium text-lg transition"
+          onClick={()=>router.replace('/menu')}
+          >
             See the menu
           </button>
         </div>
